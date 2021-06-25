@@ -63,8 +63,8 @@ export default function App() {
       {/* <Text>Your expo push token: {expoPushToken}</Text> */}
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         
-        <Input label='Reminder Title' onChangeText={(value)=>setTitle(value)}/>
-        <Input label='Reminder Body' onChangeText={(value)=>setBody(value)}/>
+        <Input label='Reminder Title' value={title} onChangeText={(value)=>setTitle(value)}/>
+        <Input label='Reminder Body' value={body} onChangeText={(value)=>setBody(value)}/>
         <Button title='Set Date and Time' onPress={showDatePicker}/>
         <DateTimePickerModal isVisible = {isDatePickerVisible} mode='datetime' onConfirm={handleConfirm} onCancel={hideDatePicker}/>
       </View>
@@ -75,6 +75,7 @@ export default function App() {
           await schedulePushNotification({title,body,seconds});
           setTitle('');
           setBody('');
+          alert('Your notification is Scheduled!');
         }}
       />
     </View>
