@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "Reminder",
+    "description": "It Reminds Your of your daily Tasks",
     "slug": "Reminder",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,10 +24,22 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "useNextNotificationsApi": true,
+      "package": "com.mianimesh.reminder"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "sounds": [
+            "sound.wav"
+          ]
+        }
+      ]
+    ]
   }
 }
